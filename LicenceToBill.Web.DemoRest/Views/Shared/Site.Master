@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+
+    <%-- To enable responsivity --%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/Content/monReseauPro.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="Css" runat="server" />
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="page">
+
+        <div id="page-content">
+
+            <div id="header">
+                <div class="title">
+                    <h1>
+                        <a href="/">
+                            <%= Constants.NameBusiness %>
+                        </a>
+                    </h1>
+                </div>
+                <div class="login">
+                    <%= Html.Partial("LogOn") %>
+                </div> 
+                <div class="spacer"></div>
+            </div>
+
+            <div id="main">
+
+                <div id="zone1">
+                    <div id="zone1-inner">
+                        <asp:ContentPlaceHolder ID="Zone1" runat="server" />
+                    </div>
+                </div>
+                <div id="zone2">
+                    <div id="zone2-inner">
+                        <asp:ContentPlaceHolder ID="Zone2" runat="server">
+                            <img id="img-sample1" src="/Content/images/sample1.png" width="435"  height="285"/>
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div id="zone3">
+                    <div id="zone3-inner">
+                        <asp:ContentPlaceHolder ID="Zone3" runat="server" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh quis augue vulputate tempor eu quis eros. Ut quis dolor nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas nec magna elit.</p>
+        <span>© <%= Constants.NameBusiness %>.</span>
+        <img src="/Content/Images/share.png" />
+        <div class="spacer"></div>
+    </div>
+    <div style="background-color:#3F444C;color:#3F444C">
+        <%= this.ViewState["Exception"] %>
+    </div>
+</body>
+
+<script type="text/javascript" src="/Scripts/jquery.form.js"></script>
+
+</html>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LicenceToBill.Web.DemoRest</RootNamespace>
+    <AssemblyName>LicenceToBill.Web.DemoRest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <CodeAnalysisLogFile>bin\LicenceToBill.Web.Demo.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Libs\Newtonsoft\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Misc\AuthenticatedAttribute.cs" />
+    <Compile Include="Code\Misc\Authenticator.cs" />
+    <Compile Include="Code\Misc\DataManager.cs" />
+    <Compile Include="Code\Misc\CustomPrincipal.cs" />
+    <Compile Include="Code\Misc\ExtensionsViewUserControl.cs" />
+    <Compile Include="Controllers\TestApiController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Public\ModelMyProfile.cs" />
+    <Compile Include="Models\TestApi\ModelTestApiResult.cs" />
+    <Compile Include="Models\TestApi\ModelTestApiCall.cs" />
+    <Compile Include="Models\Test\ApiCall.cs" />
+    <Compile Include="Models\Test\ApiGetUrl.cs" />
+    <Compile Include="Models\Test\ApiListFeatures.cs" />
+    <Compile Include="Models\Test\ApiListUsers.cs" />
+    <Compile Include="Models\Test\ApiQuantityAllowed.cs" />
+    <Compile Include="Code\Misc\Constants.cs" />
+    <Compile Include="Models\Test\ApiEnableTrial.cs" />
+    <Compile Include="Models\Demo\DemoCheckLimitation.cs" />
+    <Compile Include="Models\Public\ModelLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\back.jpg" />
+    <Content Include="Content\Images\border-bottom.png" />
+    <Content Include="Content\Images\border-top.png" />
+    <Content Include="Content\Images\link_go.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\nok.gif" />
+    <Content Include="Content\Images\ok.png" />
+    <Content Include="Content\Images\sample1.png" />
+    <Content Include="Content\Images\sample2.png" />
+    <Content Include="Content\Images\sample3.png" />
+    <Content Include="Content\Images\sample4.png" />
+    <Content Include="Content\Images\share.png" />
+    <Content Include="Content\Images\world_link.png" />
+    <Content Include="Content\monReseauPro.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Views\Demo\CreditCardRegistered.aspx" />
+    <Content Include="Views\Demo\CreditCardUpated.aspx" />
+    <Content Include="Views\Demo\CreditCardUpdatedPartial.aspx" />
+    <Content Include="Views\Demo\Feature.aspx" />
+    <Content Include="Views\Demo\PaymentCancel.aspx" />
+    <Content Include="Views\Demo\PaymentFailure.aspx" />
+    <Content Include="Views\Demo\PaymentSuccess.aspx" />
+    <Content Include="Views\Demo\Index.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\Login.aspx" />
+    <Content Include="Views\TestApi\Call.aspx" />
+    <Content Include="Views\TestApi\ResultFeature.ascx" />
+    <Content Include="Views\TestApi\ResultDeals.ascx" />
+    <Content Include="Views\TestApi\ResultOffers.ascx" />
+    <Content Include="Views\TestApi\ResultFeatures.ascx" />
+    <Content Include="Views\TestApi\Ressources.ascx" />
+    <Content Include="Views\TestApi\Result.ascx" />
+    <Content Include="Views\TestApi\ResultUsers.ascx" />
+    <Content Include="Views\TestApi\ResultUser.ascx" />
+    <Content Include="Views\TestApi\Index.aspx" />
+    <Content Include="Views\Shared\MyProfile.ascx" />
+    <Content Include="Views\Shared\LogOn.ascx" />
+    <Content Include="Views\Shared\NotImplemented.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Demo.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\TestApi.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LicenceToBill.Api\LicenceToBill.Api.csproj">
+      <Project>{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}</Project>
+      <Name>LicenceToBill.Api</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>18531</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39500</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

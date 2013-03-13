@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicenceToBill.Api", "LicenceToBill.Api\LicenceToBill.Api.csproj", "{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicenceToBill.Web.DemoRest", "LicenceToBill.Web.DemoRest\LicenceToBill.Web.DemoRest.csproj", "{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{96EEDE7B-2531-4226-A20A-EB7EB9DBA63E}.Test|Any CPU.Build.0 = Release|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{ECFA504B-AE65-4F86-8A5E-5F5BD6418C65}.Test|Any CPU.Build.0 = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

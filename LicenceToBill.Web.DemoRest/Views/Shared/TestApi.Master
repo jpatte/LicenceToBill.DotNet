@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#"  MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ContentPlaceHolderID="Css" runat="server">
+    <asp:ContentPlaceHolder ID="Css" runat="server" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="Zone1" runat="server">
+    <asp:ContentPlaceHolder ID="Zone1" runat="server" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="Zone2" runat="server">
+    <asp:ContentPlaceHolder ID="Zone2" runat="server" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="Zone3" runat="server">
+    <asp:ContentPlaceHolder ID="Zone3" runat="server" />
+</asp:Content>

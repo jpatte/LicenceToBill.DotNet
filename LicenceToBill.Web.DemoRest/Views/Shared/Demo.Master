@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#"  MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="loginTitle" ContentPlaceHolderID="Zone1" runat="server">
+    <asp:ContentPlaceHolder ID="Zone1" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Zone3" runat="server">
+
+    <div class="login">
+        <div class="third1 left">
+
+            <div class="service-feature">
+               <h3><div class="bullet">1</div>&nbsp;Feature #1</h3>
+               <br />
+                <div class="button-big">
+                    <a href="/Demo/Feature1"><%= DataManager.TitleFeature1 %></a>
+                </div>
+               <br />
+               <br />
+               <p><%= DataManager.DescriptionFeature1 %></p>
+            </div>
+        
+
+        </div>
+        <div class="third2 left">
+
+            <div class="service-feature">
+               <h3><div class="bullet">2</div>&nbsp;Feature #2</h3>
+               <br />
+                <div class="button-big">
+                    <a href="/Demo/Feature2"><%= DataManager.TitleFeature2 %></a>
+                </div>
+               <br />
+               <br />
+               <p><%= DataManager.DescriptionFeature2 %></p>
+               <p>(current usage : <strong><%= DataManager.GetVolumeFeature(CustomPrincipal.Current.KeyUser) %></strong>)</p>
+            </div>
+
+        </div>
+        <div class="spacer"></div>    
+        <br />
+        <br />
+    </div>
+
+</asp:Content>
