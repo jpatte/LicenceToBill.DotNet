@@ -24,7 +24,7 @@ namespace LicenceToBill.Api
         List<DealV2> ListDealsByUser(string keyUser);
 
         // For mockup purposes only
-        DealV2 ActivateDeal(string keyUser, string keyOffer);
+        DealV2 ActivateDeal(string keyUser, string keyOffer, bool andTerminatePreviousDeals = true);
         void TerminateDeal(string keyUser, string keyDeal);
     }
 }

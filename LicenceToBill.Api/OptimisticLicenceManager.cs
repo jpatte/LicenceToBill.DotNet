@@ -61,7 +61,7 @@ namespace LicenceToBill.Api
             return LicenceManager.PostTrial(keyOffer, keyUser, nameUser, lcid);
         }
 
-        public DealV2 ActivateDeal(string keyUser, string keyOffer)
+        public DealV2 ActivateDeal(string keyUser, string keyOffer, bool andTerminatePreviousDeals = true)
         {
             throw new NotSupportedException();
         }
