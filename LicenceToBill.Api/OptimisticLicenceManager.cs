@@ -61,12 +61,12 @@ namespace LicenceToBill.Api
             return LicenceManager.PostTrial(keyOffer, keyUser, nameUser, lcid);
         }
 
-        public void ActivateOffer(string keyUser, string keyOffer)
+        public DealV2 ActivateDeal(string keyUser, string keyOffer)
         {
             throw new NotSupportedException();
         }
 
-        public void TerminateOffer(string keyUser, string keyOffer)
+        public void TerminateDeal(string keyUser, string keyDeal)
         {
             throw new NotSupportedException();
         }
