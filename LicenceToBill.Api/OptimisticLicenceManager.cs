@@ -13,7 +13,14 @@ namespace LicenceToBill.Api
 
         public UserV2 GetUser(string keyUser)
         {
-            return LicenceManager.GetUser(keyUser);
+            try
+            {
+                return LicenceManager.GetUser(keyUser);
+            }
+            catch(Exception)
+            {
+                return null;
+            }
         }
 
         public UserV2 PostUser(string keyUser, string nameUser, int? lcid = null)
