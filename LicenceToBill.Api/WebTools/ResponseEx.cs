@@ -257,6 +257,8 @@ namespace LicenceToBill.Api.Tools
                     &&
                     (   // status code is 'OK'
                         this.Response.StatusCode == HttpStatusCode.OK
+                        || // status code is 'Created'
+                        this.Response.StatusCode == HttpStatusCode.Created
                         || // or status code is 'No content'
                         this.Response.StatusCode == HttpStatusCode.NoContent
                     );
