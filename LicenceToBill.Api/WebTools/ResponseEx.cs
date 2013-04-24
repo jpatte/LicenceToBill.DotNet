@@ -277,8 +277,8 @@ namespace LicenceToBill.Api.Tools
                     string.IsNullOrEmpty(this.MessageError)
                     // we got a response
                     && (this.Response != null)
-                    // status code is 'OK'
-                    && (this.Response.StatusCode == HttpStatusCode.OK)
+                    // status code is 'OK' or 'Created'
+                    && (this.Response.StatusCode == HttpStatusCode.OK || this.Response.StatusCode == HttpStatusCode.Created)
                     // we have a memory stream
                     && (this.MemStream != null)
                     // the memory stream is not empty
