@@ -237,12 +237,14 @@ namespace LicenceToBill.Api
         /// <summary>
         /// List offers with user-specific url for given user
         /// </summary>
-        public static List<OfferV2> ListOffersByUser(string keyUser)
+        public static List<OfferV2> ListOffersByUser(string keyUser, bool visibleOffersOnly = true)
         {
             List<OfferV2> result = null;
 
             // build the url
             var url = LtbUrl.Build(LtbResource.OffersByUser, keyUser);
+            if(!visibleOffersOnly)
+                url += "?visible=false";
 
             // create the request and send it
             var response = RequestFluent.Create(url)
