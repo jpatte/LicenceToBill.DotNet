@@ -80,11 +80,11 @@ namespace LicenceToBill.Api
 
             // build the user to send
             var userToSend = new UserV2
-                                 {
-                                   KeyUser = keyUser,
-                                   NameUser = nameUser,
-                                   Lcid = (lcid ?? LtbConstants.LcidDefault)
-                                 };
+            {
+                KeyUser = keyUser,
+                NameUser = nameUser,
+                Lcid = (lcid ?? LtbConstants.LcidDefault)
+            };
 
             // create the request and send it
             var response = RequestFluent.Create(url)
@@ -139,7 +139,7 @@ namespace LicenceToBill.Api
 
             // build the url
             var url = LtbUrl.Build(LtbResource.FeaturesByLcid, (lcid ?? LtbConstants.LcidDefault));
-             
+
             // create the request and send it
             var response = RequestFluent.Create(url)
                 .Send();
@@ -204,7 +204,7 @@ namespace LicenceToBill.Api
 
             return result;
         }
-        
+
         #endregion
 
         #region Offers
@@ -212,12 +212,14 @@ namespace LicenceToBill.Api
         /// <summary>
         /// List all offers
         /// </summary>
-        public static List<OfferV2> ListOffers(int? lcid = null)
+        public static List<OfferV2> ListOffers(int? lcid = null, bool? visible = null)
         {
             List<OfferV2> result = null;
 
             // build the url
             var url = LtbUrl.Build(LtbResource.OffersByLcid, (lcid ?? LtbConstants.LcidDefault));
+            if(visible.HasValue)
+                url += "?visible=" + (visible.Value ? "true" : "false");
 
             // create the request and send it
             var response = RequestFluent.Create(url)
@@ -233,18 +235,18 @@ namespace LicenceToBill.Api
 
             return result;
         }
-        
+
         /// <summary>
         /// List offers with user-specific url for given user
         /// </summary>
-        public static List<OfferV2> ListOffersByUser(string keyUser, bool visibleOffersOnly = true)
+        public static List<OfferV2> ListOffersByUser(string keyUser, bool? visible = null)
         {
             List<OfferV2> result = null;
 
             // build the url
             var url = LtbUrl.Build(LtbResource.OffersByUser, keyUser);
-            if(!visibleOffersOnly)
-                url += "?visible=false";
+            if(visible.HasValue)
+                url += "?visible=" + (visible.Value ? "true" : "false");
 
             // create the request and send it
             var response = RequestFluent.Create(url)
@@ -295,21 +297,23 @@ namespace LicenceToBill.Api
         /// - Enable a free trial
         /// - returns its available features
         /// </summary>
-        public static List<FeatureV2> PostTrial(string keyOffer, string keyUser, string nameUser, int? lcid=null)
+        public static List<FeatureV2> PostTrial(string keyOffer, string keyUser, string nameUser, int? lcid = null, bool forced = false)
         {
             List<FeatureV2> result = null;
 
             // build the url
             var url = LtbUrl.Build(LtbResource.Trial, keyUser);
-                        
+            if(forced)
+                url += "?forced=true";
+
             // build the deal to send
             var dealToSend = new DealV2
-                                 {
-                                     KeyOffer = keyOffer,
-                                     KeyUser = keyUser,
-                                     NameUser = nameUser,
-                                     LcidUser = (lcid ?? LtbConstants.LcidDefault)
-                                 };
+            {
+                KeyOffer = keyOffer,
+                KeyUser = keyUser,
+                NameUser = nameUser,
+                LcidUser = (lcid ?? LtbConstants.LcidDefault)
+            };
 
             // create the request and send it
             var response = RequestFluent.Create(url)
@@ -345,26 +349,26 @@ namespace LicenceToBill.Api
                     // get request url
                     string requestUrl = response.UrlRequest;
                     // if none specified
-                    if (string.IsNullOrEmpty(requestUrl))
+                    if(string.IsNullOrEmpty(requestUrl))
                         // set default
                         requestUrl = "(unspecified)";
 
                     // get response error message
                     string errorMessage = response.MessageError;
                     // if none specified
-                    if (string.IsNullOrEmpty(errorMessage))
+                    if(string.IsNullOrEmpty(errorMessage))
                         // set default
                         errorMessage = "(no message)";
 
                     // get response body as a string
                     string responseBody = response.GetBodyAsString();
                     // if none
-                    if (string.IsNullOrEmpty(responseBody))
+                    if(string.IsNullOrEmpty(responseBody))
                         // set default
                         responseBody = "(no response body)";
 
                     // throw an exception
-                    throw new ApplicationException(string.Format("LicenceManager error [Http status: {0} - {1}] [Url: {2}] [Error message: {3}] [Response body: {4}]", (int) response.StatusHttp, response.StatusHttp, requestUrl, errorMessage, responseBody));
+                    throw new ApplicationException(string.Format("LicenceManager error [Http status: {0} - {1}] [Url: {2}] [Error message: {3}] [Response body: {4}]", (int)response.StatusHttp, response.StatusHttp, requestUrl, errorMessage, responseBody));
                 }
             }
             // if no response
